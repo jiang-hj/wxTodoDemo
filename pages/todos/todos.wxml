@@ -1,0 +1,8 @@
+<view class="todo-app">
+  <view class="title-v">
+    <text class="title">todos</text>
+  </view>
+  <view class="input-todo">
+    <input type="text" placeholder-class="input-placeholder" placeholder="What needs to be done?"/>
+  </view>
+</view>

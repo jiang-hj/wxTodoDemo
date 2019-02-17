@@ -1,0 +1,19 @@
+.title-v {
+  text-align: center;
+}
+
+.title {
+  font-size: 50px;
+  color: rgba(175, 47, 47, .15);
+  font-weight: 600;
+}
+
+input {
+  border: 1px solid #000;
+}
+
+.input-placeholder {
+  font-size: 20px;
+  font-style: italic;
+  color: #aaa
+}
