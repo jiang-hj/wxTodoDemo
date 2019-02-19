@@ -1,8 +1,30 @@
 <view class="todo-app">
-  <view class="title-v">
-    <text class="title">todos</text>
+  <view class="todo-head">
+    <view class="title-v">
+      <text class="title">todos</text>
+    </view>
+    <view class="input-todo pd-10">
+      <checkbox-group bindchange="checkAll" >
+        <checkbox checked="{{checkedAll}}" bindchange="checkAll"/>
+      </checkbox-group>
+      <input type="text" placeholder-class="input-placeholder" placeholder="What needs to be done?" value="{{inpText}}" bindconfirm="addTodo"/>
+    </view>
   </view>
-  <view class="input-todo">
-    <input type="text" placeholder-class="input-placeholder" placeholder="What needs to be done?"/>
+  <scroll-view scroll-y class="todo-body">
+    <view class="todo-item pd-10" wx:for="{{todos}}" wx:key="{{index}}" hidden="{{showState !== 'all' && (item.finished ? 'completed' !== showState : 'active' !== showState) }}">
+        <checkbox data-index="{{index}}" checked="{{item.finished}}" bindtap="checkItem"/>
+      <text class="{{item.finished ? 'finished' : ''}}">{{item.text}}</text>
+    </view>
+  </scroll-view>
+  <view class="todo-foot {{'bg-' + showState}}">
+    <text class="todo-info">{{leftNum}} items left</text>
+    <view class="button-group" bindtap="toggleShow">
+      <button size="mini" data-state="all" class="{{showState === 'all' ? 'current' : ''}}">All</button>
+      <button size="mini" data-state="active" class="{{showState === 'active' ? 'current' : ''}}">Active</button>
+      <button size="mini" data-state="completed" class="{{showState === 'completed' ? 'current' : ''}}">Completed</button>
+    </view>
+    <view class="button-group">
+      <button size="mini" bindtap="clearCompleted" class="{{leftNum < todos.length ? '' : 'hidden'}}">clear</button>
+    </view>
   </view>
 </view>

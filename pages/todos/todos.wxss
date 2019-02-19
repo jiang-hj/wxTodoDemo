@@ -1,3 +1,8 @@
+.todo-head {
+  /* background-color: #921; */
+  height: 250rpx;
+}
+
 .title-v {
   text-align: center;
 }
@@ -8,12 +13,106 @@
   font-weight: 600;
 }
 
+checkbox-group {
+  vertical-align: top;
+  display: inline-block;
+}
+
+checkbox {
+  width: 70rpx;
+  vertical-align: top;
+}
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%
+}
+
 input {
-  border: 1px solid #000;
+  width: 650rpx;
+  font-size: 20px;
+  display: inline-block;
+  padding-left: 20rpx;
+  box-sizing: border-box;
 }
 
 .input-placeholder {
   font-size: 20px;
   font-style: italic;
-  color: #aaa
+  color: #eee
+}
+
+.todo-body {
+  box-shadow: 0 -2rpx 2rpx #eee;
+  position: absolute;
+  top: 250rpx;
+  bottom: 40px;
+}
+
+.pd-10 {
+  padding: 10rpx;
+}
+
+.todo-item {
+  border-bottom: 1px solid #eee;
+  color: #555
+}
+
+.todo-item text {
+  font-size: 20px;
+  padding-left: 20rpx;
+}
+
+text.finished {
+  transition: color .4s;
+  text-decoration: line-through;
+  color: #eee
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.todo-foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
+  font-size: 12px;
+}
+
+.bg-all {
+  background-color: #5bc0de;
+}
+
+.bg-completed {
+  background-color: #5cb85c;
+}
+
+.bg-active {
+  background-color: #f0ad4e;
+}
+
+.button-group button{
+  display: inline;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background: none;
+  border: none;
+}
+
+.button-group button::after {
+  border-color: transparent;
+}
+
+button.current::after {
+  border-color: #fff;
+}
+
+.hidden {
+  visibility: hidden;
 }
